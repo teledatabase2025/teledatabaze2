@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Detail čísla | TKM</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  color: #172033;
+}
+
+.topbar {
+  background: linear-gradient(135deg, #0d47a1, #08306b);
+  color: white;
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 24px;
+  font-size: 25px;
+  font-weight: bold;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+.container {
+  max-width: 1180px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  overflow: hidden;
+  margin-bottom: 26px;
+}
+
+.card-header {
+  padding: 22px 26px;
+  border-bottom: 1px solid #e0e6ef;
+}
+
+.card-header h1,
+.card-header h2 {
+  margin: 0;
+}
+
+.card-header p {
+  margin: 8px 0 0;
+  color: #667085;
+}
+
+.number-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+.status {
+  background: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #bbdefb;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding: 24px 26px;
+}
+
+.stat {
+  background: #f7f9fc;
+  border: 1px solid #e0e6ef;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.stat small {
+  display: block;
+  color: #667085;
+  margin-bottom: 8px;
+}
+
+.stat strong {
+  font-size: 22px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f7f9fc;
+  color: #475467;
+  text-align: left;
+  font-size: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e0e6ef;
+}
+
+td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 15px;
+}
+
+tr:hover td {
+  background: #f9fbff;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.outgoing {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.incoming {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.action {
+  display: inline-block;
+  background: #0d47a1;
+  color: white;
+  padding: 8px 13px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.action:hover {
+  background: #08306b;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 10px;
+  background: white;
+  color: #0d47a1;
+  border: 1px solid #c7d7ef;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.back:hover {
+  background: #f1f6ff;
+}
+
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .number {
+    font-size: 26px;
+  }
+
+  .topbar {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  TKM - Telekomunikační modul telefonních čísel a hovorů
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="number-line">
+        <div>
+          <p>Detail telefonního čísla</p>
+          <a class="number" href="6031943788info.html">603 194 3788</a>
+        </div>
+        <span class="status">Aktivní záznam</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <small>Období</small>
+        <strong>30 dnů</strong>
+      </div>
+      <div class="stat">
+        <small>Hovory</small>
+        <strong>1</strong>
+      </div>
+      <div class="stat">
+        <small>SMS</small>
+        <strong>1</strong>
+      </div>
+      <div class="stat">
+        <small>Stav</small>
+        <strong>Aktivní</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Záznamy hovorů za posledních 30 dnů</h2>
+      <p>Přehled dostupných odchozích a příchozích hovorů.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Čas</th>
+            <th>Telefonní číslo</th>
+            <th>Délka trvání</th>
+            <th>Typ hovoru</th>
+            <th>Záznam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>25.3.2025</td>
+            <td>06:10</td>
+            <td>723 854 5516</td>
+            <td>?</td>
+            <td><span class="badge outgoing">Odchozí</span></td>
+            <td>
+              <a class="action" href="https://drive.google.com/file/d/1mUdznH-DryP5tTImXOr0Btc2l2rL4m-L/view" target="_blank">
+                Přehrát
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Přepis SMS zpráv za posledních 30 dnů</h2>
+      <p>Přehled dostupných textových zpráv.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Datum</th>
+            <th>Čas</th>
+            <th>Telefonní číslo</th>
+            <th>Počet znaků</th>
+            <th>Typ SMS</th>
+            <th>Záznam</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>24.3.2025</td>
+            <td>20:42</td>
+            <td>777 644 9135</td>
+            <td>?</td>
+            <td><span class="badge incoming">Příchozí</span></td>
+            <td>
+              <a class="action" href="6031943788sms.html">
+                Přečíst
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <a class="back" href="index.html">← Zpět na vyhledávání telefonních čísel</a>
+
+</div>
+
+</body>
+</html>
